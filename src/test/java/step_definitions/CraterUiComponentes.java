@@ -2,52 +2,47 @@ package step_definitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import utils.Driver;
 
 public class CraterUiComponentes {
 	
 	
-	@Given("I am user of the crater application")
-	public void i_am_user_of_the_crater_application() {
-        
+	@Given("I navigate to the login page")
+	public void i_navigate_to_the_login_page() {
+	    
 	}
-	@When("User navigate to the login page")
-	public void user_navigate_to_the_login_page() {
+	@Then("I should see page title {string}")
+	public void i_should_see_page_title(String string) {
+	    
+	}
+	@Then("I should see email field box")
+	public void i_should_see_email_field_box() {
+	    
+	}
+	@Then("I should see password field box")
+	public void i_should_see_password_field_box() {
 	   
 	}
-	@Then("User should see page title")
-	public void user_should_see_page_title() {
+	@Then("I should see forget password link")
+	public void i_should_see_forget_password_link() {
+	   
+	}
+	@Then("I should see login button")
+	public void i_should_see_login_button() {
 	    
 	}
-	@Then("User should see email field")
-	public void user_should_see_email_field() {
-	    
+	@Then("I should see a Text area on bottom left {string}")
+	public void i_should_see_a_text_area_on_bottom_left(String string) {
+	   
 	}
-	@Then("User should see Password field")
-	public void user_should_see_password_field() {
-	    
+	@Then("I should see a heading Text A {string}")
+	public void i_should_see_a_heading_text_a(String string) {
+	   
 	}
-	@Then("User should see forget password link")
-	public void user_should_see_forget_password_link() {
+	@Then("I should see a heading Text B underneath A {string}")
+	public void i_should_see_a_heading_text_b_underneath_a(String string) {
 	  
+		
+		
 	}
-	@Then("User should see loging button")
-	public void user_should_see_loging_button() {
-	    
-	}
-	@Then("User should see a text Copyright @ Crater Invoice, Inc. {int}")
-	public void user_should_see_a_text_copyright_crater_invoice_inc(Integer int1) {
-	    
-	}
-	@Then("User should see text Simple Invoicing for Individuals Small Businesses")
-	public void user_should_see_text_simple_invoicing_for_individuals_small_businesses() {
-	
-	}
-	@Then("User should see heading with the following text Crater helps you track expenses, record payments & generate beautiful invoices & estimates")
-	public void user_should_see_heading_with_the_following_text_crater_helps_you_track_expenses_record_payments_generate_beautiful_invoices_estimates() {
-	   
-	}
-	
 
 }
