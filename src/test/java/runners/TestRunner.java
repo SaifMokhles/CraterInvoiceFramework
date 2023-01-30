@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
 		features="./src/test/resources/features",
 		glue="step_definitions",
 		// when it's true, cucumber only runs the scenario steps that have not been implemented.
-		tags="@CraterLoginUIComponents",
+		tags="@CraterApp",
 		publish=true
 		)
 public class TestRunner {
