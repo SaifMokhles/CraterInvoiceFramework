@@ -18,8 +18,8 @@ public class CraterUiComponentes {
 	   Driver.getDriver().get("http://invoice.primetech-apps.com/login"); 
 		
 	}
-	@Then("I should see page title {string}")
-	public void i_should_see_page_title(String Text) {
+	@Then("I should see page title Text")
+	public void i_should_see_page_title_text() {
 	  String Pagetitle =  Driver.getDriver().getTitle();
 	   Assert.assertEquals(Pagetitle, TestDataReader.getProperty("CraterPageTitle"));
 	}
@@ -41,20 +41,21 @@ public class CraterUiComponentes {
 	public void i_should_see_login_button() {
 	    Assert.assertTrue(loginpage.loginbtn.isDisplayed());
 	}
-	@Then("I should see a Copyright Text area on bottom left {string}")
-	public void i_should_see_a_copyright_text_area_on_bottom_left(String string) {
+	@Then("I should see a Copyright Text area on bottom left")
+	public void i_should_see_a_copyright_text_area_on_bottom_left() {
      String Copy = loginpage.CopyrightText.getText();
+      System.out.println(Copy);
      Assert.assertEquals(Copy, TestDataReader.getProperty("CopyRightText22"));
 
 	}
 	
-	@Then("I should see a heading Text A {string}")
-	public void i_should_see_a_heading_text_a(String Text) {
+	@Then("I should see a heading Text A")
+	public void i_should_see_a_heading_text_a() {
 		String HeadingAText = loginpage.HeadingAText.getText();
 		Assert.assertEquals(HeadingAText , TestDataReader.getProperty("HeaderA"));
 	}
-	@Then("I should see a heading Text B underneath A {string}")
-	public void i_should_see_a_heading_text_b_underneath_a(String Text) {
+	@Then("I should see a heading Text B underneath A")
+	public void i_should_see_a_heading_text_b_underneath_a() {
 		String HeadingBText = loginpage.HeadingBText.getText();
 		Assert.assertEquals(HeadingBText , TestDataReader.getProperty("HeaderB"));
 		
