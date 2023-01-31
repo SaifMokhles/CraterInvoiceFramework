@@ -12,7 +12,7 @@ public class CraterAppLoginPage {
  	  PageFactory.initElements(Driver.getDriver(), this);
 		
 	}
-	
+	 
 	@FindBy(name="email")
 	public WebElement EmailFeildBox;
 	

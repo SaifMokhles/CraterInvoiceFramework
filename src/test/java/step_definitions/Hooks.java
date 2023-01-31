@@ -1,4 +1,4 @@
-package step_definitions;
+ package step_definitions;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.OutputType;
@@ -22,6 +22,6 @@ public class Hooks {
 					Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
 			scenario.attach(screenshot, "image/png", "screenshot");
 		}
-		Driver.quitDriver();
+		Driver.quitDriver(); 
 	}
 }

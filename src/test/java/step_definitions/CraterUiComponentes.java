@@ -26,7 +26,7 @@ public class CraterUiComponentes {
 	@Then("I should see email field box")
 	public void i_should_see_email_field_box() {
 	  Assert.assertTrue(loginpage.EmailFeildBox.isDisplayed()); 
-		
+		 
 	}
 	@Then("I should see password field box")
 	public void i_should_see_password_field_box() {
