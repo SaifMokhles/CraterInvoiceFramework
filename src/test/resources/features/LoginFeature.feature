@@ -1,6 +1,6 @@
 
 @CraterApp
-Feature: Validating User Login with Valid Credentials
+Feature: Validating User Login Credentials
  
   @LoginValidation
   Scenario: Valid login Senarios
@@ -14,12 +14,25 @@ Feature: Validating User Login with Valid Credentials
     
     
     
-    
-    
-    
-    #Scenario Outline:  login Senarios
-#
-    #Examples: 
-      #| name  | value | status  |
-      #| name1 |     5 | success |
-      #| name2 |     7 | Fail    |
+    @InvalidLoginValidation
+    Scenario Outline:  invalid login Senarios
+     Given User navigate to the login page
+     When User enter invalid or blank email "<username>" and password "<password>"
+     And User click login button
+     Then user should see a error message
+     
+     
+     
+     
+
+    Examples: 
+      | username             |  password       |
+      | name1@yahoo.com      |  pass222        |
+      | illgetepic@gmail.com |  hello222       |
+      | il22@gmail.com       |  Madmoyo2009    |
+      |                      |                 |
+      |    hel@gmail.com     |                 |
+      |                      |    hello222     |
+      
+      
+      

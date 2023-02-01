@@ -42,6 +42,32 @@ public class LoginValidation {
 		
 	   
 	}
+	
+	
+	
+	@When("User enter invalid or blank email {string} and password {string}")
+	public void user_enter_invalid_or_blank_email_and_password(String username, String password) {
+	   utils.sendKeysWithActionsClass(loginpage.EmailFeildBox, username);
+	   utils.sendKeysWithActionsClass(loginpage.PasswordFeildBox, password);
+		
+	}
+	@Then("user should see a error message")
+	public void user_should_see_a_error_message() {
+		
+		if (loginpage.invalidUserErrorMessage.isDisplayed()) {
+		 Assert.assertEquals(loginpage.invalidUserErrorMessage.isDisplayed(), TestDataReader.getProperty("InvalidErrorMessgeText"));
+		 
+		} 
+		 else if (loginpage.fieldRequired.isDisplayed()) {
+			Assert.assertEquals(loginpage.fieldRequired.isDisplayed(), TestDataReader.getProperty("FieldRequierdText"));
+		}
+		
+		 else { 
+            
+			System.out.println("HelloWorld");
 
+		
+	}
 
+	}
 }

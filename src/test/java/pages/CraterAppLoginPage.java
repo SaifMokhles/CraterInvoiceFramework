@@ -12,7 +12,7 @@ public class CraterAppLoginPage {
  	  PageFactory.initElements(Driver.getDriver(), this);
 		
 	}
-	 
+	  
 	@FindBy(name="email")
 	public WebElement EmailFeildBox;
 	
@@ -36,6 +36,14 @@ public class CraterAppLoginPage {
 	
 	@FindBy(css=".hidden.text-sm")
 	public WebElement HeadingBText; 
+	
+	
+	
+	@FindBy(xpath = "//p[contains(text(), 'These credentials do not match our records.')]")
+	public WebElement invalidUserErrorMessage;
+
+	@FindBy(xpath = "//span[text()='Field is required']")
+	public WebElement fieldRequired;
 	
 	
 	
