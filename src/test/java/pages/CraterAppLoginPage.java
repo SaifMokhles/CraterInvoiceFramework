@@ -38,12 +38,39 @@ public class CraterAppLoginPage {
 	public WebElement HeadingBText; 
 	
 	
-	
 	@FindBy(xpath = "//p[contains(text(), 'These credentials do not match our records.')]")
 	public WebElement invalidUserErrorMessage;
 
 	@FindBy(xpath = "//span[text()='Field is required']")
+	
 	public WebElement fieldRequired;
+	
+	
+	
+	@FindBy(css=".font-base.block")
+	public WebElement Enteremailfield;
+	
+	
+	@FindBy(xpath="//div[contains(text(),'Send Reset Link')]")
+	public WebElement SendResetlinkBtn;
+	
+	
+	
+	@FindBy(xpath="//a[contains(text(),'Back to Login?')]")
+	public WebElement BacktoLoginlink;
+	
+	
+	@FindBy(xpath="//span[@class='block mt-0.5 text-sm text-red-500']")
+	public WebElement incorretEmailMsg;
+	
+	
+	@FindBy(xpath="//span[contains(text(),'Field is required')]")
+	public WebElement ForgetPassFieldRQRD;
+	
+	
+	
+	
+	
 	
 	
 	

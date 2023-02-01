@@ -39,10 +39,10 @@ public class LoginValidation {
 		Thread.sleep(800);
 		String DashbordUrl = Driver.getDriver().getCurrentUrl();
 		Assert.assertEquals(DashbordUrl, TestDataReader.getProperty("CraterDashbordpageUrl"));
-		
-	   
+		  
 	}
 	
+	// Invalid Senario Outline
 	boolean userempty;
 	boolean passempty;
 	@When("User enter invalid username {string} and password {string}")
