@@ -17,7 +17,7 @@ Feature: Validating User Login Credentials
     @InvalidLoginValidation
     Scenario Outline:  invalid login Senarios
      Given User navigate to the login page
-     When User enter invalid or blank email "<username>" and password "<password>"
+     When User enter invalid username "<username>" and password "<password>"
      And User click login button
      Then user should see a error message
      
@@ -32,7 +32,10 @@ Feature: Validating User Login Credentials
       | il22@gmail.com       |  Madmoyo2009    |
       |                      |                 |
       |    hel@gmail.com     |                 |
+      |  illgetepic@gmail.com|                 |
       |                      |    hello222     |
+      |                      | Madmoyo2009     |
+      
       
       
       

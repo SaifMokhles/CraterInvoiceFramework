@@ -43,31 +43,40 @@ public class LoginValidation {
 	   
 	}
 	
-	
-	
-	@When("User enter invalid or blank email {string} and password {string}")
-	public void user_enter_invalid_or_blank_email_and_password(String username, String password) {
-	   utils.sendKeysWithActionsClass(loginpage.EmailFeildBox, username);
-	   utils.sendKeysWithActionsClass(loginpage.PasswordFeildBox, password);
+	boolean userempty;
+	boolean passempty;
+	@When("User enter invalid username {string} and password {string}")
+	public void user_enter_invalid_or_blank_email_and_password(String invalidusername, String invalidpassword) {
+		 userempty = invalidusername.isBlank();
+		 passempty = invalidpassword.isBlank();
+		
+	   utils.sendKeysWithActionsClass(loginpage.EmailFeildBox, invalidusername);
+	   utils.sendKeysWithActionsClass(loginpage.PasswordFeildBox, invalidpassword);
 		
 	}
 	@Then("user should see a error message")
 	public void user_should_see_a_error_message() {
 		
-		if (loginpage.invalidUserErrorMessage.isDisplayed()) {
-		 Assert.assertEquals(loginpage.invalidUserErrorMessage.isDisplayed(), TestDataReader.getProperty("InvalidErrorMessgeText"));
-		 
-		} 
-		 else if (loginpage.fieldRequired.isDisplayed()) {
-			Assert.assertEquals(loginpage.fieldRequired.isDisplayed(), TestDataReader.getProperty("FieldRequierdText"));
+		
+		if(userempty || passempty)   {
+	  utils.waitUntilElementVisible(loginpage.fieldRequired);
+	  Assert.assertTrue(loginpage.fieldRequired.isDisplayed());
+			
+		}  else { 
+			utils.waitUntilElementVisible(loginpage.invalidUserErrorMessage);  
+			Assert.assertTrue(loginpage.invalidUserErrorMessage.isDisplayed());
+			// user stay on login page
+			Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("login"));
 		}
-		
-		 else { 
-            
-			System.out.println("HelloWorld");
-
+			
+			
+		}
+	
 		
 	}
+	
+		
+	
 
-	}
-}
+	
+
