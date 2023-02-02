@@ -50,10 +50,11 @@ public class ForgetPassword {
 	}  else {
 		utils.waitUntilElementVisible(loginpage.incorretEmailMsg);
 		 Assert.assertTrue(loginpage.incorretEmailMsg.isDisplayed());
+
+		 }
 	}
 		
-	}
-	
+
 	@Then("user enter {string} Value in email field")
 	public void user_enter_value_in_email_field(String ValidEmail) {
 		utils.waitUntilElementVisible(loginpage.Enteremailfield);
@@ -61,9 +62,10 @@ public class ForgetPassword {
 		loginpage.SendResetlinkBtn.click();
 	    
 	}
-	@Then("User click on Send Reset link")
-	public void user_click_on_send_reset_link() {
-		loginpage.SendResetlinkBtn.click();
+	@Then("User click on Back to login link")
+	public void user_click_on_back_to_login_link() {
+		loginpage.BacktoLoginlink.click();
+		Assert.assertEquals(Driver.getDriver().getCurrentUrl(), TestDataReader.getProperty("craterUrl"));
 	    
 	}
 

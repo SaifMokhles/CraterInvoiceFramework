@@ -19,9 +19,7 @@ Feature: Validating User Login Credentials
      And User click login button
      Then user should see a error message
      
-     
-     
-
+ 
     Examples: 
       | username             |  password       |
       | name1@yahoo.com      |  pass222        |
